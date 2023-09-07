@@ -16,24 +16,27 @@ const km = parseInt(prompt("Inserisci i chilometri da percorrere"));
 const age = parseInt(prompt("Inserisci l'età del passeggero"));
 const minor = 18;
 const senor = 65;
-let message;
-let prezzoBiglietto;
+let message = "Il costo del biglietto è pari a €";
+let ticketPrice;
 
-prezzoBiglietto = (km * 0.21);
+ticketPrice = (km * 0.21);
+
 if (isNaN(km)){
 	message = "Attenzione! il numero dei chilometri da percorrere inserito non è corretto!"
 } else if (isNaN(age)) {
 	message = "Attenzione! l'età del passeggero inserito non è corretto!"
 } else if (age < minor) {
-	prezzoBiglietto = (prezzoBiglietto - ((prezzoBiglietto * 20) / 100));
-	message = "Il costo del biglietto è pari a €" + (prezzoBiglietto.toFixed(2));
+	ticketPrice -= ticketPrice * 0.2;
+	message += (ticketPrice.toFixed(2));
 } else if (age > senor) {
-	prezzoBiglietto = (prezzoBiglietto - ((prezzoBiglietto * 40) / 100));
-	message = "Il costo del biglietto è pari a €" + (prezzoBiglietto.toFixed(2));
+	ticketPrice -= ticketPrice * 0.4;
+	message += (ticketPrice.toFixed(2));
+} else {
+	message += (ticketPrice.toFixed(2));
 }
 
 document.getElementById('output').innerHTML = message;
 
 console.log(km, age);
-console.log(prezzoBiglietto);
+console.log(ticketPrice);
 console.log(message);
