@@ -16,6 +16,8 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 
 3. Controllare l'età se è designato allo sconto e di conseguenza applicarlo. 
 
-4. Creare la stringa di output.
+4. Arrotondare il prezzo con massimo 2 decimali.
 
-5. Effettuare l'innerHTML dell'output nel tag designato.
+5. Creare la stringa di output.
+
+6. Effettuare l'innerHTML dell'output nel tag designato.
